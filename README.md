@@ -1,6 +1,6 @@
 # productform
 This is a really simple product form and shopping cart React app.
-Demo can be found here: https://vercel.com/stefanlinde95/productform/6FpqmGNEzWG7vcDL13aXp8PtFSUv
+Demo can be found here: https://productform.vercel.app/
 
 ## Scripts
 
