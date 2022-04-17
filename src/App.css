@@ -1,0 +1,33 @@
+.delete-btn {
+  right: 3%;
+  top: 1%;
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-weight: 700;
+  cursor:pointer;
+  text-decoration: none;
+  transition: .5s;
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
+.product-item {
+  max-height: 400px;
+  height: 100%;
+}
+
+.product-item .card-title:first-letter {
+  text-transform: uppercase;
+}
+
+.add-to-cart {
+  text-decoration: none;
+  transition: .5s;
+}
+
+.submit-btn {
+  transition: .5s;
+}
