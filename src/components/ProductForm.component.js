@@ -21,7 +21,7 @@ function ProductForm() {
   const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name) {
+    if (!name || !price || !image) {
       showAlert(true, "danger", "please enter value");
     } else if (name && isEditing) {
       setList(
@@ -84,6 +84,7 @@ function ProductForm() {
                 placeholder="Product image (https://)"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
+                required
               />
               <input
                 type="text"
@@ -92,6 +93,7 @@ function ProductForm() {
                 maxLength="40"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                required
               />
               <input
                 type="number"
@@ -101,6 +103,7 @@ function ProductForm() {
                 step="0.01"
                 min="0"
                 onChange={(e) => setPrice(e.target.value)}
+                required
               />
               <button
                 type="submit"
@@ -117,7 +120,7 @@ function ProductForm() {
       </div>
       <>
         {list.length > 0 && (
-          <div className="grocery-container">
+          <div className="product-container">
             <List items={list} removeItem={removeItem} addToCart={addToCart} />
           </div>
         )}
