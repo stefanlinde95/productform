@@ -59,13 +59,11 @@ function ProductForm() {
   const addToCart = (id) => {
     showAlert(true, "success", "Item added to cart");
     cartItem.push(id);
-    console.log(cartItem);
   };
   const removeItem = (id) => {
     showAlert(true, "danger", "Item removed");
     setList(list.filter((item) => item.id !== id));
     setCartItem(cartItem.filter((item) => item != id));
-    console.log(cartItem);
   };
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
