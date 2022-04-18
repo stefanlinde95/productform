@@ -14,7 +14,7 @@ function ProductForm() {
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
-  const [cartCounter, setCartCounter] = useState(0);
+  const [cartItem, setCartItem] = useState([]);
   const [list, setList] = useState(getLocalStorage());
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
@@ -56,13 +56,16 @@ function ProductForm() {
   const showAlert = (show = false, type = "", msg = "") => {
     setAlert({ show, type, msg });
   };
-  const addToCart = () => {
+  const addToCart = (id) => {
     showAlert(true, "success", "Item added to cart");
-    setCartCounter(cartCounter + 1);
+    cartItem.push(id);
+    console.log(cartItem);
   };
   const removeItem = (id) => {
     showAlert(true, "danger", "Item removed");
     setList(list.filter((item) => item.id !== id));
+    setCartItem(cartItem.filter((item) => item != id));
+    console.log(cartItem);
   };
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
@@ -115,7 +118,9 @@ function ProductForm() {
           </form>
         </div>
         <div className="col-sm-12 col-md-3 my-auto">
-          <p className="rounded border p-3">Products in cart: {cartCounter}</p>
+          <p className="rounded border p-3">
+            Products in cart: {cartItem.length}
+          </p>
         </div>
       </div>
       <>

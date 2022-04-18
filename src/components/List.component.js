@@ -27,7 +27,7 @@ const List = ({ items, removeItem, addToCart }) => {
                 <a
                   href="#"
                   className="btn-primary add-to-cart px-4 pb-2 pt-1 rounded"
-                  onClick={() => addToCart()}
+                  onClick={() => addToCart(id)}
                 >
                   Add to cart
                 </a>
